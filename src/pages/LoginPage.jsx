@@ -50,12 +50,12 @@ const LoginPage = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 to-blue-900 flex flex-col md:flex-row">
-            <div className="md:w-full bg-white flex items-center justify-center p-8">
-                <div className="max-w-md w-full">
+        <div className="main-container min-h-screen flex flex-col md:flex-row">
+            <div className="md:w-full flex items-center justify-center p-8">
+                <div className="max-w-md w-full  px-3 py-5 backdrop-blur-sm rounded-xl">
                     <div className="text-center mb-10">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-2">Sign In to Account</h2>
-                        <p className="text-gray-600">Enter your credentials to access the portal</p>
+                        <h2 className="text-3xl font-bold text-white mb-2">Sign In to Account</h2>
+                        <p className="text-gray-200">Enter your credentials to access the portal</p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-6">
@@ -66,17 +66,17 @@ const LoginPage = () => {
                         )}
 
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-white mb-2">
                                 Username
                             </label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <FaUser className="text-gray-400" />
+                                    <FaUser className="text-gray-200" />
                                 </div>
                                 <input
                                     type="text"
                                     onChange={(e) => setUsername(e.target.value)}
-                                    className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                                    className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-gray-100 transition"
                                     placeholder="Enter your username"
                                     required
                                     disabled={isLoading}
@@ -85,17 +85,17 @@ const LoginPage = () => {
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-white mb-2">
                                 Password
                             </label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <FaLock className="text-gray-400" />
+                                    <FaLock className="text-white" />
                                 </div>
                                 <input
                                     type="password"
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                                    className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-gray-100 transition"
                                     placeholder="Enter your password"
                                     required
                                     disabled={isLoading}
@@ -110,7 +110,7 @@ const LoginPage = () => {
                                     id="remember"
                                     className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                                 />
-                                <label htmlFor="remember" className="ml-2 text-sm text-gray-600">
+                                <label htmlFor="remember" className="ml-2 text-sm text-gray-100">
                                     Remember me
                                 </label>
                             </div>
@@ -120,7 +120,7 @@ const LoginPage = () => {
                         <button
                             type="submit"
                             disabled={isLoading}
-                            className="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all font-semibold flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all font-semibold flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             {isLoading ? (
                                 <>
@@ -135,9 +135,6 @@ const LoginPage = () => {
                             )}
                         </button>
                     </form>
-
-
-                   
                 </div>
             </div>
         </div>
