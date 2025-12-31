@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+
+:root {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+.main-container {
+  background-image: url('./assets/images/bg-image.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r bg-clip-text text-transparent;
+  }
+  
+  .card-shadow {
+    @apply shadow-[0_10px_40px_-15px_rgba(0,0,0,0.2)];
+  }
+}
