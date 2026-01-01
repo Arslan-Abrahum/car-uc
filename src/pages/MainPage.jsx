@@ -15,7 +15,6 @@ const MainPage = () => {
     const [updateName, setUpdateName] = useState('')
     const navigate = useNavigate()
     const { userName, logout } = useAuth()
-    console.log(userName);
 
     const handleLogout = () => {
         logout()
@@ -66,6 +65,7 @@ const MainPage = () => {
 
                 <button
                     onClick={() => {
+                        localStorage.setItem('user-name', updateName)
                         navigate('/failed-journey')
 
                     }}

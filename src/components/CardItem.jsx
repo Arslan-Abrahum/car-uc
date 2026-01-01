@@ -1,6 +1,5 @@
 
 const CardItem = ({ card, onClick }) => {
-    console.log(card);
     
   return (
     <button

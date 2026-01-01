@@ -14,7 +14,6 @@ import Loader from '../components/Loader'
 
 const OrderDetails = () => {
   const { type } = useParams()
-  console.log(type); 
   
   const navigate = useNavigate()
   const [orderData, setOrderData] = useState(null)
