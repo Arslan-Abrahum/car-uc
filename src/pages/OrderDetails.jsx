@@ -98,11 +98,11 @@ const OrderDetails = () => {
     <>
       {showLoader && <Loader type={type} />}
       
-      <div className={`min-h-screen bg-gradient-to-br ${theme.gradient}`}>
+      <div className={`main-container min-h-screen`}>
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
-            <div className={`bg-white rounded-3xl shadow-2xl p-8 ${theme.border} border-2`}>
+            <div className={`backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-white`}>
               <div className="grid lg:grid-cols-2 gap-8">
                 
                 <div className="space-y-8">
@@ -111,7 +111,7 @@ const OrderDetails = () => {
                       <div className={`p-3 ${theme.iconBg} rounded-xl`}>
                         <FaCar className={`${theme.iconColor} text-xl`} />
                       </div>
-                      <h2 className="text-2xl font-bold text-gray-900">Selected Vehicle</h2>
+                      <h2 className="text-2xl font-bold text-white">Selected Vehicle</h2>
                     </div>
                     
                     <div className={`relative h-64 ${orderData.vehicle.color} rounded-2xl overflow-hidden mb-6`}>
@@ -121,7 +121,7 @@ const OrderDetails = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-6">
                         <h3 className="text-2xl font-bold text-white">{orderData.vehicle.title}</h3>
-                        <p className="text-white/80">{orderData.vehicle.values}</p>
+                        <p className="text-white">{orderData.vehicle.values}</p>
                       </div>
                     </div>
 
@@ -133,7 +133,7 @@ const OrderDetails = () => {
                       ].map((item, idx) => (
                         <div key={idx} className="flex justify-between py-3 border-b border-gray-200 last:border-0">
                           <span className="text-gray-600">{item.title}</span>
-                          <span className="font-medium text-gray-900">{item.value}</span>
+                          <span className="font-medium text-white">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -147,37 +147,37 @@ const OrderDetails = () => {
                       <div className={`p-3 ${theme.iconBg} rounded-xl`}>
                         <FaReceipt className={`${theme.iconColor} text-xl`} />
                       </div>
-                      <h2 className="text-2xl font-bold text-gray-900">Order Information</h2>
+                      <h2 className="text-2xl font-bold text-white">Order Information</h2>
                     </div>
 
                     <div className="space-y-4">
-                      <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                      <div className="flex items-center gap-4 p-4 rounded-xl">
                         <div className={`p-3 ${theme.iconBg} rounded-lg`}>
                           <FaIdCard className={`${theme.iconColor}`} />
                         </div>
                         <div className="flex-1">
                           <p className="text-sm text-gray-600">Player ID</p>
-                          <p className="font-bold text-lg text-gray-900">{orderData.playerId}</p>
+                          <p className="font-bold text-lg text-white">{orderData.playerId}</p>
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                      <div className="flex items-center gap-4 p-4 rounded-xl">
                         <div className={`p-3 ${theme.iconBg} rounded-lg`}>
                           <FaUser className={`${theme.iconColor}`} />
                         </div>
                         <div className="flex-1">
-                          <p className="text-sm text-gray-600">Customer Name</p>
-                          <p className="font-bold text-lg text-gray-900">{orderData.playerName}</p>
+                          <p className="text-sm text-white">Customer Name</p>
+                          <p className="font-bold text-lg text-gray-300">{orderData.playerName}</p>
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                      <div className="flex items-center gap-4 p-4 rounded-xl">
                         <div className={`p-3 ${theme.iconBg} rounded-lg`}>
                           <FaCalendar className={`${theme.iconColor}`} />
                         </div>
                         <div className="flex-1">
-                          <p className="text-sm text-gray-600">Order Date & Time</p>
-                          <p className="font-bold text-lg text-gray-900">{orderData.date} • {orderData.time}</p>
+                          <p className="text-sm text-white">Order Date & Time</p>
+                          <p className="font-bold text-lg text-gray-300">{orderData.date} • {orderData.time}</p>
                         </div>
                       </div>
                     </div>
@@ -207,13 +207,13 @@ const OrderDetails = () => {
                     <div className="grid grid-cols-2 gap-4 mt-4">
                       <button
                         onClick={() => navigate('/')}
-                        className="py-3 border border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 transition-colors"
+                        className="py-3 border text-white hover:text-black  border-gray-300 rounded-xl hover:bg-gray-50 transition-colors"
                       >
                         Cancel Order
                       </button>
                       <button
                         onClick={() => navigate(`/${type}-journey`)}
-                        className="py-3 border border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 transition-colors"
+                        className="py-3 border border-gray-300 text-white rounded-xl hover:bg-gray-50 transition-colors"
                       >
                         Change Vehicle
                       </button>
@@ -227,7 +227,7 @@ const OrderDetails = () => {
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
                   <div>
                     <p className="text-sm text-gray-600">Order ID</p>
-                    <p className="font-bold text-gray-900">{orderData.orderId}</p>
+                    <p className="font-bold text-white">{orderData.orderId}</p>
                   </div>
                   {/* <div className="text-sm text-gray-600">
                     All data is stored locally on your device
