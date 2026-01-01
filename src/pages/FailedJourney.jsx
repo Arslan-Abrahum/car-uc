@@ -1,23 +1,23 @@
-// pages/FailedJourney.jsx
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FaArrowLeft, FaCar, FaFilter } from 'react-icons/fa6'
 import CardGrid from '../components/CardGrid'
 import PlayerIDModal from '../components/PlayerIDModal'
+import { vehicleCards } from '../data/vehicle'
 
 const FailedJourney = () => {
   const [showPlayerModal, setShowPlayerModal] = useState(false)
   const [selectedCard, setSelectedCard] = useState(null)
   const navigate = useNavigate()
 
-  const vehicleCards = Array.from({ length: 16 }, (_, i) => ({
-    id: i + 1,
-    name: `Vehicle ${String.fromCharCode(65 + i)}`,
-    type: ['SUV', 'Sedan', 'Truck', 'Sports', 'Coupe', 'Convertible', 'Van', 'Electric'][i % 8],
-    price: `$${(25000 + i * 5000).toLocaleString()}`,
-    year: 2020 + (i % 5),
-    color: `from-blue-${400 + (i % 6) * 100}/20 to-indigo-${400 + (i % 6) * 100}/20`,
-  }))
+  // const vehicleCards = Array.from({ length: 16 }, (_, i) => ({
+  //   id: i + 1,
+  //   name: `Vehicle ${String.fromCharCode(65 + i)}`,
+  //   type: ['SUV', 'Sedan', 'Truck', 'Sports', 'Coupe', 'Convertible', 'Van', 'Electric'][i % 8],
+  //   price: `$${(25000 + i * 5000).toLocaleString()}`,
+  //   year: 2020 + (i % 5),
+  //   color: `from-blue-${400 + (i % 6) * 100}/20 to-indigo-${400 + (i % 6) * 100}/20`,
+  // }))
 
   const handleCardClick = (card) => {
     setSelectedCard(card)
@@ -45,35 +45,12 @@ const FailedJourney = () => {
             <span>Back to Home</span>
           </button>
           
-          <div className="text-center">
-            <h1 className="text-4xl font-bold mb-2">Failed Journey Portal</h1>
-            <p className="text-blue-200/80">Select a vehicle and complete the order process</p>
-          </div>
           
           <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
             <FaFilter />
             <span>16 Vehicles</span>
           </div>
         </header>
-
-        {/* Stats Bar */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-          {[
-            { label: 'Total Selection', value: '1 Required', icon: '🎯' },
-            { label: 'Average Price', value: '$52,500', icon: '💰' },
-            { label: 'Success Rate', value: '0% Expected', icon: '📊' }
-          ].map((stat, idx) => (
-            <div key={idx} className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-2xl font-bold">{stat.value}</p>
-                  <p className="text-blue-200/70 text-sm">{stat.label}</p>
-                </div>
-                <span className="text-2xl">{stat.icon}</span>
-              </div>
-            </div>
-          ))}
-        </div>
 
         {/* Card Grid */}
         <div className="mb-12">

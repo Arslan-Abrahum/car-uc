@@ -9,7 +9,7 @@ const NameModal = ({ isOpen, onClose, onSubmit, currentName }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (!name.trim()) return
-    
+
     setIsSubmitting(true)
     // Simulate async operation
     await new Promise(resolve => setTimeout(resolve, 300))
@@ -20,16 +20,16 @@ const NameModal = ({ isOpen, onClose, onSubmit, currentName }) => {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 backdrop-blur-sm">
-      <div className="bg-white rounded-2xl max-w-md w-full animate-in fade-in zoom-in-95">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 ">
+      <div className="rounded-2xl backdrop-blur-sm max-w-md w-full animate-in fade-in zoom-in-95 border border-white">
         <div className="p-6">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-blue-100 rounded-lg">
                 <FaUserPen className="text-blue-600" />
               </div>
-              <h2 className="text-xl font-bold text-gray-900">
-                {currentName ? 'Update Profile' : 'Welcome Aboard'}
+              <h2 className="text-xl font-bold text-white">
+                Welcome Aboard
               </h2>
             </div>
             <button
@@ -43,14 +43,14 @@ const NameModal = ({ isOpen, onClose, onSubmit, currentName }) => {
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-white mb-2">
                 Your Name
               </label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                className="w-full px-4 py-3 text-gray-200 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
                 placeholder="Enter your full name"
                 required
                 disabled={isSubmitting}
@@ -62,7 +62,7 @@ const NameModal = ({ isOpen, onClose, onSubmit, currentName }) => {
               <button
                 type="button"
                 onClick={onClose}
-                className="flex-1 px-4 py-3 border border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 transition-colors disabled:opacity-50"
+                className="flex-1 px-4 py-3 text-white border border-gray-300 hover:text-black rounded-xl hover:bg-gray-50 transition-colors disabled:opacity-50"
                 disabled={isSubmitting}
               >
                 Cancel
@@ -77,9 +77,9 @@ const NameModal = ({ isOpen, onClose, onSubmit, currentName }) => {
             </div>
           </form>
         </div>
-        
-        <div className="border-t border-gray-200 p-4 bg-gray-50 rounded-b-2xl">
-          <p className="text-sm text-gray-500 text-center">
+
+        <div className=" p-4 rounded-b-2xl">
+          <p className="text-sm text-white text-center">
             Your name will be used across the application for personalization
           </p>
         </div>

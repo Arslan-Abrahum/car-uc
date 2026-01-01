@@ -17,7 +17,7 @@ const StatusPage = () => {
     const timer = setTimeout(() => {
       localStorage.setItem('lastStatus', type)
       navigate('/')
-    }, 5000)
+    }, 60000)
 
     return () => clearTimeout(timer)
   }, [navigate, type])
@@ -43,10 +43,10 @@ const StatusPage = () => {
   const Icon = config.icon
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${config.gradient} flex flex-col items-center justify-center p-6`}>
+    <div className={` min-h-screen bg-gradient-to-br ${config.gradient} flex flex-col items-center justify-center p-6`}>
       <div className="max-w-lg w-full text-center">
         {/* Animated Status Icon */}
-        <div className="relative mb-8">
+        <div className="relative">
           <div className={`w-48 h-48 mx-auto ${config.bgRing} rounded-full animate-ping`}></div>
           <div className={`w-40 h-40 mx-auto ${config.bgRing} rounded-full animate-ping`} style={{ animationDelay: '0.5s' }}></div>
           <div className="absolute inset-0 flex items-center justify-center">

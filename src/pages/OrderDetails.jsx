@@ -58,7 +58,7 @@ const OrderDetails = () => {
     localStorage.setItem('orderStatus', 'processing')
     
     // Simulate processing
-    await new Promise(resolve => setTimeout(resolve, 2500))
+    await new Promise(resolve => setTimeout(resolve, 5000))
     
     setShowLoader(false)
     navigate(`/status/${type}`)
@@ -156,8 +156,8 @@ const OrderDetails = () => {
                           <FaIdCard className={`${theme.iconColor}`} />
                         </div>
                         <div className="flex-1">
-                          <p className="text-sm text-gray-600">Player ID</p>
-                          <p className="font-bold text-lg text-white">{orderData.playerId}</p>
+                          <p className="text-sm text-white">Player ID</p>
+                          <p className="font-bold text-lg text-gray-300">{orderData.playerId}</p>
                         </div>
                       </div>
 

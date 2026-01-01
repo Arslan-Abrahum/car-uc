@@ -52,7 +52,7 @@ const LoginPage = () => {
     return (
         <div className="main-container min-h-screen flex flex-col md:flex-row">
             <div className="md:w-full flex items-center justify-center p-8">
-                <div className="max-w-md w-full  px-3 py-5 backdrop-blur-sm rounded-xl">
+                <div className="max-w-md w-full  px-3 py-5 backdrop-blur-sm border border-white rounded-xl">
                     <div className="text-center mb-10">
                         <h2 className="text-3xl font-bold text-white mb-2">Sign In to Account</h2>
                         <p className="text-gray-200">Enter your credentials to access the portal</p>

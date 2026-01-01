@@ -21,7 +21,7 @@ const Loader = ({ type }) => {
   const Icon = config.icon
 
   return (
-    <div className={`fixed inset-0 bg-gradient-to-br ${config.gradient} flex flex-col items-center justify-center z-50`}>
+    <div className={`fixed inset-0 bg-black flex flex-col items-center justify-center z-50`}>
       <div className="text-center max-w-md px-4">
         {/* Animated Icon */}
         <div className="relative mb-8">
@@ -35,8 +35,8 @@ const Loader = ({ type }) => {
         </div>
 
         {/* Text */}
-        <h2 className="text-3xl font-bold text-gray-800 mb-3">{config.title}</h2>
-        <p className="text-gray-600 mb-8">{config.message}</p>
+        <h2 className="text-3xl font-bold text-white mb-3">{config.title}</h2>
+        <p className="text-gray-300 mb-8">{config.message}</p>
 
         {/* Progress Indicators */}
         <div className="flex justify-center gap-2 mb-8">
@@ -57,7 +57,7 @@ const Loader = ({ type }) => {
           />
         </div>
 
-        <div className="mt-8 flex items-center justify-center gap-2 text-gray-500">
+        <div className="mt-8 flex items-center justify-center gap-2 text-gray-300">
           <FaHourglassHalf className="animate-pulse" />
           <span>Please wait, this will take a moment...</span>
         </div>
